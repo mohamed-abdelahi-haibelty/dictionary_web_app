@@ -8,10 +8,10 @@ function Switcher() {
         <div className="flex items-center justify-between">
             <img src={IconoirBook} alt="book svg" />
             <div className="flex items-center">
-                <div className="pr-4 ">
+                <div className="pr-4 md:pr-[26px] ">
                     <FontSwitcher/>
                 </div>
-                <div className="pl-4 border-l border-gray-20">
+                <div className="pl-4 md:pl-[26px] border-l border-gray-20">
                     <ThemSwitcher/>
                 </div>
             </div>
