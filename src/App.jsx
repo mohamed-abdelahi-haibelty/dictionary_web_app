@@ -1,5 +1,4 @@
 
-import { useState } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -7,18 +6,20 @@ import { fontContext } from './context/FontContext'
 
 function App() {
   
-  const [fontType, setFontType] = useState({text:"Mono", value:"mono"})
+  if(!localStorage.fontType){
+    localStorage.fontType = JSON.stringify({text:"Mono", value:"mono"})
+  }
 
   const handleFontType = (type) => {
       switch(type){
         case "Mono":
-          setFontType({text:"Mono", value:"mono"})
+          localStorage.fontType = JSON.stringify({text:"Mono", value:"mono"})
           break
         case "Serif":
-          setFontType({text:"Serif", value:"serif"})
+          localStorage.fontType = JSON.stringify({text:"Serif", value:"serif"})
           break
         case "Sans Serif":
-          setFontType({text:"Sans Serif", value:"sansSerif"})
+          localStorage.fontType = JSON.stringify({text:"Sans Serif", value:"sansSerif"})
           break
       }
   }
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div >
-      <fontContext.Provider value={{fontType, handleFontType}}>
+      <fontContext.Provider value={{handleFontType}}>
         <Header/>
       </fontContext.Provider>
     </div>
