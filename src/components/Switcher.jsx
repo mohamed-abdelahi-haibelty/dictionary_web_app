@@ -12,6 +12,7 @@ function Switcher() {
   const [showPopUp, setShowPopUp] = useState(false)
   const fonts = ['Mono', "Sans Serif", "Serif"]
   const {handleFontType} = useContext(fontContext)
+  
 
   return (
     <div>

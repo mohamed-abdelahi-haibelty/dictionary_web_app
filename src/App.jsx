@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -24,7 +25,12 @@ function App() {
       }
   }
 
-
+  useEffect(() => {
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark')
+      localStorage.toggle = true
+    } 
+  }, [])
 
   return (
     <div >
