@@ -26,6 +26,9 @@ export default {
         mono:['Inconsolata', 'monospace'],
         serif: ['Lora', 'serif'],
         sansSerif:['Inter', 'sans-serif']
+      },
+      boxShadow: {
+        'lt': '0px 5px 30px  rgba(0, 0, 0, 0.1)',
       }
     },
   },

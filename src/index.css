@@ -4,5 +4,6 @@
 @tailwind utilities;
 
 
-  
- 
+ .model > span:hover {
+    color : #A445ED
+ }
