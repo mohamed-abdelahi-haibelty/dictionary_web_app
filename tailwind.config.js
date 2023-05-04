@@ -29,6 +29,7 @@ export default {
       },
       boxShadow: {
         'lt': '0px 5px 30px  rgba(0, 0, 0, 0.1)',
+        'dk': '0px 5px 30px #A445ED'
       }
     },
   },
