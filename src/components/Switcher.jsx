@@ -22,7 +22,7 @@ function Switcher() {
                 <div className="pr-4 md:pr-[26px] relative cursor-pointer" onClick={() => setShowPopUp(prevShowPopUp => !prevShowPopUp)}>
                     <FontSwitcher/>
                    {showPopUp && ( 
-                        <div className="absolute right-0 top-8 md:top-10">
+                        <div className="absolute z-50 right-0 top-8 md:top-10">
                             <Model>
                                 {fonts.map((font, indx) => <span onClick={() => handleFontType(font)} key={indx} >{font}</span>)}
                             </Model>
