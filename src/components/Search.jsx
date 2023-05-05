@@ -1,11 +1,12 @@
 import {CiSearch} from 'react-icons/ci'
-//import { useEffect, useContext } from 'react';
-//import { fontContext } from '../context/FontContext';
+import { useContext } from 'react';
+import { fontContext } from '../context/FontContext';
 import axios from 'axios';
 
 
 function Search() {
   const fontType = JSON.parse(localStorage.fontType)
+  const {setData} = useContext(fontContext)
  
   const handelSearch = async (e) => {
         if (e.key === 'Enter'){
@@ -17,7 +18,8 @@ function Search() {
             }
             try{
                const response =  await axios.request(options)
-               console.log(response)
+               console.log(response.data)
+               setData(response.data)
             }catch(error){
                 console.error(error.response.status)
             }
