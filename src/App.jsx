@@ -1,11 +1,15 @@
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-
+import Hero from './components/Hero'
 import Header from './components/Header'
 import { fontContext } from './context/FontContext'
 
+
+
 function App() {
+
+  const [data, setData] = useState([])
   
   if(!localStorage.fontType){
     localStorage.fontType = JSON.stringify({text:"Mono", value:"mono"})
@@ -34,8 +38,9 @@ function App() {
 
   return (
     <div >
-      <fontContext.Provider value={{handleFontType}}>
+      <fontContext.Provider value={{handleFontType, data, setData}}>
         <Header/>
+        <Hero/>
       </fontContext.Provider>
     </div>
   )
