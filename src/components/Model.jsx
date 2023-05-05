@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Model(props) {
 
   return (
-    <div className=" model w-[120px] md:w-[183px] text-xs md:text-lg text-black-20 bg-white dark:text-white dark:bg-black-30 font-bold  rounded-2xl shadow-lt dark:shadow-dk flex flex-col px-4 py-4 md:px-6 md:py-6 gap-2 md:gap-4">
+    <div className=" model z-50 w-[120px] md:w-[183px] text-xs md:text-lg text-black-20 bg-white dark:text-white dark:bg-black-30 font-bold  rounded-2xl shadow-lt dark:shadow-dk flex flex-col px-4 py-4 md:px-6 md:py-6 gap-2 md:gap-4">
             {props.children}
     </div>
   )
