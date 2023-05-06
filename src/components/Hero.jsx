@@ -10,8 +10,8 @@ function Hero() {
   const {meanings, sourceUrls, word} = data.length > 0 && data[0]
   return (
     <div className='mr-auto ml-auto mt-7 w-[327px] md:w-[737px]'>
-        {data.length > 0 && <Head/>}
-        {data.length > 0 && meanings.map((m,i) => 
+        {<Head/>}
+        {meanings.map((m,i) => 
         <Translate 
             key={i} 
             partOfSpeech={m.partOfSpeech}

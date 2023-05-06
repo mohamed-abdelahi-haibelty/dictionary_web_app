@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import Header from './components/Header'
+import NotFound from './components/NotFound'
 import { fontContext } from './context/FontContext'
 
 
@@ -55,7 +56,8 @@ function App() {
     <div >
       <fontContext.Provider value={{handleFontType, data, setData, font}}>
         <Header/>
-        <Hero/>
+        {data && data.length > 0 && <Hero/>}
+        {data === null && <NotFound/>}
       </fontContext.Provider>
     </div>
   )
