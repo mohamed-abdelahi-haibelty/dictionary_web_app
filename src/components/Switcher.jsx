@@ -1,5 +1,5 @@
 import IconoirBook from '../assets/iconoirBook.svg'
-import FontSwitcher from './fontSwitcher'
+import FontSwitcher from './FontSwitcher'
 import ThemSwitcher from './ThemSwitcher'
 import Model from './Model'
 import { fontContext } from '../context/FontContext';
