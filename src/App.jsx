@@ -10,24 +10,39 @@ import { fontContext } from './context/FontContext'
 function App() {
 
   const [data, setData] = useState([])
+  const [font, setFont] = useState(() => {
+    return localStorage.fontType? JSON.parse(localStorage.fontType): {text:"Mono", value:"Inconsolata"}
+  })
   
   if(!localStorage.fontType){
-    localStorage.fontType = JSON.stringify({text:"Mono", value:"mono"})
+    localStorage.fontType = JSON.stringify(font)
   }
 
   const handleFontType = (type) => {
       switch(type){
         case "Mono":
-          localStorage.fontType = JSON.stringify({text:"Mono", value:"mono"})
+          setFont({text:"Mono", value:"Inconsolata"})
+          localStorage.setItem("fontType", JSON.stringify({text:"Mono", value:"Inconsolata"}))
           break
         case "Serif":
-          localStorage.fontType = JSON.stringify({text:"Serif", value:"serif"})
+          setFont({text:"Serif", value:"Lora"})
+          localStorage.setItem("fontType", JSON.stringify({text:"Serif", value:"Lora"}))
           break
         case "Sans Serif":
-          localStorage.fontType = JSON.stringify({text:"Sans Serif", value:"sansSerif"})
+          setFont({text:"Sans Serif", value:"Inter"})
+          localStorage.setItem("fontType", JSON.stringify({text:"Sans Serif", value:"Inter"}))
           break
       }
   }
+
+
+  useEffect(() => {
+    if(localStorage.fontType){
+      localStorage.fontType = JSON.stringify(font)
+      let txt = JSON.parse(localStorage.fontType)
+      document.body.style.fontFamily = txt.value
+    }
+  }, [font])
 
   useEffect(() => {
     if (localStorage.theme === 'dark') {
@@ -38,7 +53,7 @@ function App() {
 
   return (
     <div >
-      <fontContext.Provider value={{handleFontType, data, setData}}>
+      <fontContext.Provider value={{handleFontType, data, setData, font}}>
         <Header/>
         <Hero/>
       </fontContext.Provider>
